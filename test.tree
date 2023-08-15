@@ -1,0 +1,188 @@
+a = [a, ...[b, ...[d], ...[e]], ...[c, ...[f], ...[g]]] console 15
+  left 
+    b = [b, ...[d], ...[e]] console 7
+      left
+        d = [d, ...[], ...[]] console 3
+          left
+            null = [] console [] 1
+          right
+            null = [] console [] 2
+      right
+        e = [e, ...[], ...[]] console 6
+          left
+            null = [] console 4
+          right
+            null = [] console 5
+
+  right
+    c = [c, ...[f], ...[g]] console 14
+      left
+        f = [f, ...[], ...[]] console 12
+          left
+            null = [] console 8
+          right
+            null = [] console 9
+      right
+        g = [g, ...[], ...[]] console 13
+          left
+            null = [] console 10
+          right
+            null = [] console 11
+
+
+// QuickSearch (T : O(n . log n))
+[10, 1, 2, 3, 4, 1, 1, -1, 120, 2]
+pivot
+  p = 2
+  i = -1
+  loop
+    loop 1
+      j = 0
+      if arr[0] < 2
+    loop 2
+      j = 1
+      if arr[1] < 2
+        i = 0
+        arr = [1, 10, 2, 3, 4, 1, 1, -1, 120, 2] // swap arr[i] and arr[j]
+    loop 3
+      j = 2
+      if arr[2] < 2
+    loop 4
+      j = 3
+      if arr[3] < 2
+    loop 5
+      j = 4
+      if arr[4] < 2
+    loop 6
+      j = 5
+      if arr[5] < 2
+        i = 1
+        arr = [1, 1, 2, 3, 4, 10, 1, -1, 120, 2] // swap arr[i] and arr[j]
+    loop 7
+      j = 6
+      if arr[6] < 2
+        i = 2
+        arr = [1, 1, 1, 3, 4, 10, 2, -1, 120, 2] // swap arr[i] and arr[j]
+    loop 8
+      j = 7
+      if arr[7] < 2
+        i = 3
+        arr = [1, 1, 1, -1, 4, 10, 2, 3, 120, 2] // swap arr[i] and arr[j]
+    loop 9
+      j = 8
+      if arr[8] < 2
+    loop 10
+      j = 9
+      if arr[9] < 2
+  i = 4
+  arr = [1, 1, 1, -1, 2, 10, 2, 3, 120, 4] // swap arr[i] and arr[end]
+pivot = 4
+  recursive 1
+    p = -1
+    i = -1
+    loop
+      loop 1
+        j = 0
+        if arr[0] < -1
+      loop 2
+        j = 1
+        if arr[1] < -1
+      loop 2
+        j = 1
+        if arr[1] < -1
+      loop 3
+        j = 2
+        if arr[2] < -1
+    i = 0
+    arr = [-1, 1, 1, 1, 2, 10, 2, 3, 120, 4] // swap arr[i] and arr[end]
+  recursive 2
+    p = 4
+    i = 4
+    loop
+      loop 1
+        j = 5
+        if arr[5] < 4
+      loop 2
+        j = 6
+        if arr[6] < 4
+          i = 5
+          arr = [-1, 1, 1, 1, 2, 2, 10, 3, 120, 4] // swap arr[i] and arr[j]
+      loop 3
+        j = 7
+        if arr[7] < 4
+          i = 6
+          arr = [-1, 1, 1, 1, 2, 2, 3, 10, 120, 4] // swap arr[i] and arr[j]
+      loop 4
+        j = 8
+        if arr[8] < 4
+      loop 5
+        j = 9
+        if arr[9] < 4
+    i = 7
+    arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[end]
+    pivot = 7
+      recursive 1
+        p = 3
+        i = -1
+        loop
+          loop 1
+            j = 0
+            if arr[0] < 3
+              i = 0
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 2
+            j = 1
+            if arr[1] < 3
+              i = 1
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 3
+            j = 2
+            if arr[2] < 3
+              i = 2
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 4
+            j = 3
+            if arr[3] < 3
+              i = 3
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 5
+            j = 4
+            if arr[4] < 3
+              i = 4
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 6
+            j = 5
+            if arr[5] < 3
+              i = 5
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[j]
+          loop 7
+            j = 6
+            if arr[6] < 3
+        i = 6
+        arr = [-1, 1, 1, 1, 2, 2, 3, 4, 120, 10] // swap arr[i] and arr[end]
+      recursive 2
+        p = 10
+        i = 7
+        loop
+          loop 1
+            j = 8
+            if arr[8] < 10
+          loop 2
+            j = 9
+            if arr[9] < 10
+              i = 8
+              arr = [-1, 1, 1, 1, 2, 2, 3, 4, 10, 120] // swap arr[i] and arr[j]
+        i = 9
+        arr = [-1, 1, 1, 1, 2, 2, 3, 4, 10, 120] // swap arr[i] and arr[end]
+
+
+
+  
+
+
+  
+  
+
+
+
+
